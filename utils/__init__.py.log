@@ -1,0 +1,29 @@
+2018-04-12 10:28:18,270 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}
+2018-04-12 10:30:15,742 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}
+2018-04-12 10:30:30,062 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}
+2018-04-12 10:31:45,210 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}
+2018-04-12 10:35:39,367 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:36:01,492 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:38:21,465 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:38:21,471 - DEBUG - Execute HGET Faild, key: list1, field: list1
+2018-04-12 10:40:19,326 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:40:19,332 - DEBUG - Execute HGET Faild, key: list1, field: list1
+2018-04-12 10:40:38,812 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:40:38,819 - DEBUG - Execute HGET Faild, key: list1, field: list1
+2018-04-12 10:47:55,123 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:48:06,985 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:49:09,092 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:49:51,921 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:50:14,761 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:50:14,765 - INFO - Execute HGETALL Success, key: list1
+2018-04-12 10:50:44,426 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:50:44,437 - INFO - Execute HGETALL Success, key: list1
+2018-04-12 10:51:17,441 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:51:17,446 - INFO - Execute HGETALL Success, key: list1
+2018-04-12 10:51:53,910 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:51:53,914 - INFO - Execute HGETALL Success, key: list1
+2018-04-12 10:53:12,311 - DEBUG - Execute HMSET Faild, key: list1, mapping: {"list1": ["aa", "bb", "cc"]}
+2018-04-12 10:53:12,316 - INFO - Execute HGETALL Success, key: list1
+2018-04-12 10:56:38,206 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}
+2018-04-12 10:56:52,762 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}
+2018-04-12 11:47:16,140 - INFO - Execute HMSET Success, key: list1, mapping: {'list1': ['aa', 'bb', 'cc']}

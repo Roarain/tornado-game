@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Game Page</title>
+</head>
+<body>
+    <p>{{current_session}}</p>
+    <p>dealer_cards: {{dealer_cards}}, dealer_cards_total_count: {{dealer_cards_total_count}}</p>
+    <br>
+    <p>player_cards: {{player_cards}}, player_cards_total_count: {{player_cards_total_count}}</p>
+    <br>
+    <button name="getcard" id="getcard" onclick="window.open('/getcard')">
+        玩家要牌
+    </button>
+</body>
+</html>
