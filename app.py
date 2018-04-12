@@ -305,7 +305,9 @@ class StopCardHandler(BaseHandler):
             current_session = self.Session
 
             print(current_session)
-
+            # ########
+            # for git comment to add this line
+            # ########
             self.render('startgame.html', current_session=current_session, **current_session)
 
 
