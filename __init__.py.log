@@ -1,199 +1,113 @@
-2018-04-12 11:56:07,359 - INFO - cookie_id or temp_id not in request_handler: <__main__.MainHandler object at 0x7fc501a35e48>
-2018-04-12 11:56:07,364 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'cookie_id': 'fc42daec1e09f184852287937d4b69eae4cad5ab515e4923800877fb3f743f3e', 'temp_id': 'e4a0f30334c3fcbafbb660a806c2c6f34aea0c35d87e50ef450e846385e28166', 'session_id': 'de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4'}
-2018-04-12 11:56:07,367 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'cookie_id': 'fc42daec1e09f184852287937d4b69eae4cad5ab515e4923800877fb3f743f3e', 'temp_id': 'e4a0f30334c3fcbafbb660a806c2c6f34aea0c35d87e50ef450e846385e28166', 'session_id': 'de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4'}
-2018-04-12 11:56:07,370 - INFO - CurrentSession: {'cookie_id': 'fc42daec1e09f184852287937d4b69eae4cad5ab515e4923800877fb3f743f3e', 'temp_id': 'e4a0f30334c3fcbafbb660a806c2c6f34aea0c35d87e50ef450e846385e28166', 'session_id': 'de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4'}
-2018-04-12 11:56:07,370 - INFO - Init MainHandler success, Redirect to /login ...
-2018-04-12 11:56:07,380 - INFO - 200 GET / (192.168.174.1) 21.41ms
-2018-04-12 11:56:07,447 - WARNING - 404 GET /favicon.ico (192.168.174.1) 0.90ms
-2018-04-12 11:56:08,640 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:08,642 - INFO - check_login wrapper: redirect to /login to login...
-2018-04-12 11:56:08,644 - INFO - 302 GET /startgame (192.168.174.1) 13.47ms
-2018-04-12 11:56:08,646 - ERROR - Uncaught exception GET /startgame (192.168.174.1)
-HTTPServerRequest(protocol='http', host='192.168.174.143:9999', method='GET', uri='/startgame', version='HTTP/1.1', remote_ip='192.168.174.1')
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/tornado/web.py", line 1543, in _execute
-    result = yield result
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 1099, in run
-    value = future.result()
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 315, in wrapper
-    yielded = next(result)
-  File "/PycharmProjects/game/app.py", line 231, in get
-    return (yield self.startgame())
-  File "/PycharmProjects/game/decorators/check.py", line 64, in _wrapper
-    return function(self, *args, **kwargs)
-  File "/PycharmProjects/game/app.py", line 241, in startgame
-    user_id = self.get_secure_cookie('user_id').decode()
-AttributeError: 'NoneType' object has no attribute 'decode'
-2018-04-12 11:56:08,677 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:08,683 - INFO - 200 GET /login (192.168.174.1) 16.01ms
-2018-04-12 11:56:12,524 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:12,529 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'cookie_id': 'fc42daec1e09f184852287937d4b69eae4cad5ab515e4923800877fb3f743f3e', 'temp_id': 'e4a0f30334c3fcbafbb660a806c2c6f34aea0c35d87e50ef450e846385e28166', 'session_id': 'de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4', 'user_name': 'f', 'user_password': 'f', 'user_id': '5c200287ea93abd6d27c9b7e83085e3031b1d5d91deafe8b354c96c531e7c52d'}
-2018-04-12 11:56:12,530 - INFO - 302 POST /login (192.168.174.1) 13.02ms
-2018-04-12 11:56:12,639 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:12,644 - INFO - BaseHandler: Generate desk_id: b7974e51e655115f651c66c5f9ed21f0ff59dd635f45e7e5f864a6e5fc80baed, cards info: ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q', '4', '4', '8', '3', '2', 'J', '6', '7']
-2018-04-12 11:56:12,644 - INFO - BaseHandler: Init dealer_cards: ['7', '6'], player_cards: ['J', '2']. Left cards: ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q', '4', '4', '8', '3']
-2018-04-12 11:56:12,646 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'step': 'STARTGAME'}
-2018-04-12 11:56:12,647 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'desk_id': 'b7974e51e655115f651c66c5f9ed21f0ff59dd635f45e7e5f864a6e5fc80baed'}
-2018-04-12 11:56:12,647 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards': ['J', '2']}
-2018-04-12 11:56:12,649 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards_total_count': 12}
-2018-04-12 11:56:12,652 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_is_blackjack': False}
-2018-04-12 11:56:12,654 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'dealer_id': '2ce0c81abae3a964bd3da51b08830d09f2821a317ba093c50cd07b384ef7b8e5'}
-2018-04-12 11:56:12,656 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'dealer_cards': ['7', '6']}
-2018-04-12 11:56:12,656 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'dealer_cards_total_count': 13}
-2018-04-12 11:56:12,658 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'dealer_is_blackjack': False}
-2018-04-12 11:56:12,658 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'left_cards': ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q', '4', '4', '8', '3']}
-2018-04-12 11:56:12,659 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_id': '5c200287ea93abd6d27c9b7e83085e3031b1d5d91deafe8b354c96c531e7c52d'}
-2018-04-12 11:56:12,661 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:12,663 - INFO - 200 GET /startgame (192.168.174.1) 29.15ms
-2018-04-12 11:56:14,506 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:14,510 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards': ['J', '2', '3']}
-2018-04-12 11:56:14,511 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards_total_count': 15}
-2018-04-12 11:56:14,512 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_is_blackjack': False}
-2018-04-12 11:56:14,512 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'left_cards': ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q', '4', '4', '8']}
-2018-04-12 11:56:14,513 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'step': 'GETCARD'}
-2018-04-12 11:56:14,543 - INFO - 200 GET /getcard (192.168.174.1) 40.46ms
-2018-04-12 11:56:24,356 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:24,366 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards': ['J', '2', '3', '8']}
-2018-04-12 11:56:24,367 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards_total_count': 23}
-2018-04-12 11:56:24,369 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_is_blackjack': False}
-2018-04-12 11:56:24,370 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'left_cards': ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q', '4', '4']}
-2018-04-12 11:56:24,371 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'step': 'GETCARD'}
-2018-04-12 11:56:24,373 - INFO - 200 GET /getcard (192.168.174.1) 19.28ms
-2018-04-12 11:56:34,210 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:34,212 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards': ['J', '2', '3', '8', '4']}
-2018-04-12 11:56:34,213 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards_total_count': 27}
-2018-04-12 11:56:34,214 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_is_blackjack': False}
-2018-04-12 11:56:34,218 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'left_cards': ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q', '4']}
-2018-04-12 11:56:34,220 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'step': 'GETCARD'}
-2018-04-12 11:56:34,221 - INFO - 200 GET /getcard (192.168.174.1) 13.42ms
-2018-04-12 11:56:37,669 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:37,672 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards': ['J', '2', '3', '8', '4', '4']}
-2018-04-12 11:56:37,673 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards_total_count': 31}
-2018-04-12 11:56:37,674 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_is_blackjack': False}
-2018-04-12 11:56:37,674 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'left_cards': ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4', 'Q']}
-2018-04-12 11:56:37,675 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'step': 'GETCARD'}
-2018-04-12 11:56:37,676 - INFO - 200 GET /getcard (192.168.174.1) 12.46ms
-2018-04-12 11:56:39,141 - INFO - Execute HGETALL Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4
-2018-04-12 11:56:39,143 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards': ['J', '2', '3', '8', '4', '4', 'Q']}
-2018-04-12 11:56:39,143 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_cards_total_count': 41}
-2018-04-12 11:56:39,144 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'player_is_blackjack': False}
-2018-04-12 11:56:39,145 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'left_cards': ['5', '9', 'J', '9', 'K', 'K', '8', '6', '6', 'A', '2', '8', 'K', 'J', '7', '2', '7', '3', '5', '10', 'Q', '5', '10', '4', '9', 'A', '3', '10', 'A', '6', 'Q', '5', 'Q', '7', '8', 'A', '9', 'J', '10', 'K', '2', '3', '4']}
-2018-04-12 11:56:39,146 - INFO - Execute HMSET Success, key: de556e0ffc9a6d4cecdeab8a5ed17584367205c6b0458efe35df9f16cbf47bc4, mapping: {'step': 'GETCARD'}
-2018-04-12 11:56:39,147 - INFO - 200 GET /getcard (192.168.174.1) 18.69ms
-2018-04-12 12:04:40,337 - INFO - cookie_id or temp_id not in request_handler: <__main__.MainHandler object at 0x7fa0c6b4cc18>
-2018-04-12 12:04:40,348 - INFO - Execute HMSET Success, key: 6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6, mapping: {'cookie_id': 'f5337c4d9a4aa498fbb5b5c11c0fb26e8b49d67447580b7f6d54cca326055916', 'temp_id': 'dc7058a5d1f8012fd722618f61deb14c1b91d144350de6e6682b1e97d43d4592', 'session_id': '6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6'}
-2018-04-12 12:04:40,352 - INFO - Execute HMSET Success, key: 6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6, mapping: {'cookie_id': 'f5337c4d9a4aa498fbb5b5c11c0fb26e8b49d67447580b7f6d54cca326055916', 'temp_id': 'dc7058a5d1f8012fd722618f61deb14c1b91d144350de6e6682b1e97d43d4592', 'session_id': '6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6'}
-2018-04-12 12:04:40,353 - INFO - CurrentSession: {'cookie_id': 'f5337c4d9a4aa498fbb5b5c11c0fb26e8b49d67447580b7f6d54cca326055916', 'temp_id': 'dc7058a5d1f8012fd722618f61deb14c1b91d144350de6e6682b1e97d43d4592', 'session_id': '6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6'}
-2018-04-12 12:04:40,353 - INFO - Init MainHandler success, Redirect to /login ...
-2018-04-12 12:04:40,364 - INFO - 200 GET / (192.168.174.1) 30.47ms
-2018-04-12 12:04:40,475 - WARNING - 404 GET /favicon.ico (192.168.174.1) 34.60ms
-2018-04-12 12:04:42,063 - INFO - Execute HGETALL Success, key: 6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6
-2018-04-12 12:04:42,067 - INFO - check_login wrapper: redirect to /login to login...
-2018-04-12 12:04:42,069 - INFO - 302 GET /startgame (192.168.174.1) 11.91ms
-2018-04-12 12:04:42,070 - ERROR - Uncaught exception GET /startgame (192.168.174.1)
-HTTPServerRequest(protocol='http', host='192.168.174.143:9999', method='GET', uri='/startgame', version='HTTP/1.1', remote_ip='192.168.174.1')
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/tornado/web.py", line 1543, in _execute
-    result = yield result
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 1099, in run
-    value = future.result()
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 315, in wrapper
-    yielded = next(result)
-  File "/PycharmProjects/game/app.py", line 231, in get
-    return (yield self.startgame())
-  File "/PycharmProjects/game/decorators/check.py", line 64, in _wrapper
-    return function(self, *args, **kwargs)
-  File "/PycharmProjects/game/app.py", line 241, in startgame
-    user_id = self.get_secure_cookie('user_id').decode()
-AttributeError: 'NoneType' object has no attribute 'decode'
-2018-04-12 12:04:42,100 - INFO - Execute HGETALL Success, key: 6e4910a468704fe8fe5b64954e72da1ba24cbe47724b1fa909dbaa1f2a3b68b6
-2018-04-12 12:04:42,112 - INFO - 200 GET /login (192.168.174.1) 27.72ms
-2018-04-12 12:05:31,421 - INFO - cookie_id or temp_id not in request_handler: <__main__.MainHandler object at 0x7f17d0e9ad68>
-2018-04-12 12:05:31,426 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'cookie_id': 'a44d354635925589b6280110d2ee6af69d2ef6b6a148adb1e97b3c2d63d0d268', 'temp_id': 'a8d9d6d1f4d1d319cb413a0b5110e338e786fb5219bbd2a1b7a5f836ff4e96a7', 'session_id': '34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44'}
-2018-04-12 12:05:31,434 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'cookie_id': 'a44d354635925589b6280110d2ee6af69d2ef6b6a148adb1e97b3c2d63d0d268', 'temp_id': 'a8d9d6d1f4d1d319cb413a0b5110e338e786fb5219bbd2a1b7a5f836ff4e96a7', 'session_id': '34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44'}
-2018-04-12 12:05:31,435 - INFO - CurrentSession: {'cookie_id': 'a44d354635925589b6280110d2ee6af69d2ef6b6a148adb1e97b3c2d63d0d268', 'temp_id': 'a8d9d6d1f4d1d319cb413a0b5110e338e786fb5219bbd2a1b7a5f836ff4e96a7', 'session_id': '34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44'}
-2018-04-12 12:05:31,436 - INFO - Init MainHandler success, Redirect to /login ...
-2018-04-12 12:05:31,542 - INFO - 200 GET / (192.168.174.1) 122.48ms
-2018-04-12 12:05:31,899 - WARNING - 404 GET /favicon.ico (192.168.174.1) 18.15ms
-2018-04-12 12:05:33,964 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:05:33,970 - INFO - check_login wrapper: redirect to /login to login...
-2018-04-12 12:05:33,972 - INFO - 302 GET /startgame (192.168.174.1) 14.32ms
-2018-04-12 12:05:33,973 - ERROR - Uncaught exception GET /startgame (192.168.174.1)
-HTTPServerRequest(protocol='http', host='192.168.174.143:9999', method='GET', uri='/startgame', version='HTTP/1.1', remote_ip='192.168.174.1')
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/tornado/web.py", line 1543, in _execute
-    result = yield result
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 1099, in run
-    value = future.result()
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 315, in wrapper
-    yielded = next(result)
-  File "/PycharmProjects/game/app.py", line 231, in get
-    return (yield self.startgame())
-  File "/PycharmProjects/game/decorators/check.py", line 64, in _wrapper
-    return function(self, *args, **kwargs)
-  File "/PycharmProjects/game/app.py", line 241, in startgame
-    user_id = self.get_secure_cookie('user_id').decode()
-AttributeError: 'NoneType' object has no attribute 'decode'
-2018-04-12 12:05:35,958 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:05:35,993 - INFO - 200 GET /login (192.168.174.1) 42.40ms
-2018-04-12 12:05:39,672 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:05:39,679 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'cookie_id': 'a44d354635925589b6280110d2ee6af69d2ef6b6a148adb1e97b3c2d63d0d268', 'temp_id': 'a8d9d6d1f4d1d319cb413a0b5110e338e786fb5219bbd2a1b7a5f836ff4e96a7', 'session_id': '34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44', 'user_name': 'f', 'user_password': 'f', 'user_id': '5c200287ea93abd6d27c9b7e83085e3031b1d5d91deafe8b354c96c531e7c52d'}
-2018-04-12 12:05:39,681 - INFO - 302 POST /login (192.168.174.1) 15.82ms
-2018-04-12 12:05:39,722 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:05:39,725 - INFO - BaseHandler: Generate desk_id: a3c9a377814e3d4971dcea96fd629749406abcf29421623c9123f1d67cdd9c00, cards info: ['8', '5', '4', '7', 'J', '9', 'J', 'K', 'Q', '5', '3', 'A', '3', '6', 'A', '7', 'A', '2', '10', '3', '6', 'Q', '10', 'Q', 'K', '8', '9', '5', 'Q', 'J', '4', '8', '4', '9', '2', '8', '7', '9', '2', '7', 'K', 'A', '4', '5', '10', '10', '6', '3', 'J', '2', '6', 'K']
-2018-04-12 12:05:39,726 - INFO - BaseHandler: Init dealer_cards: ['K', '6'], player_cards: ['2', 'J']. Left cards: ['8', '5', '4', '7', 'J', '9', 'J', 'K', 'Q', '5', '3', 'A', '3', '6', 'A', '7', 'A', '2', '10', '3', '6', 'Q', '10', 'Q', 'K', '8', '9', '5', 'Q', 'J', '4', '8', '4', '9', '2', '8', '7', '9', '2', '7', 'K', 'A', '4', '5', '10', '10', '6', '3']
-2018-04-12 12:05:39,727 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'step': 'STARTGAME'}
-2018-04-12 12:05:39,728 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'desk_id': 'a3c9a377814e3d4971dcea96fd629749406abcf29421623c9123f1d67cdd9c00'}
-2018-04-12 12:05:39,729 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_cards': ['2', 'J']}
-2018-04-12 12:05:39,731 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_cards_total_count': 12}
-2018-04-12 12:05:39,732 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_is_blackjack': False}
-2018-04-12 12:05:39,733 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'dealer_id': '3eb4bb2b13a8e4a8af942e61b9638fe6a98179994764e93dc02ad33a702d5bb9'}
-2018-04-12 12:05:39,738 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'dealer_cards': ['K', '6']}
-2018-04-12 12:05:39,740 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'dealer_cards_total_count': 16}
-2018-04-12 12:05:39,742 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'dealer_is_blackjack': False}
-2018-04-12 12:05:39,743 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'left_cards': ['8', '5', '4', '7', 'J', '9', 'J', 'K', 'Q', '5', '3', 'A', '3', '6', 'A', '7', 'A', '2', '10', '3', '6', 'Q', '10', 'Q', 'K', '8', '9', '5', 'Q', 'J', '4', '8', '4', '9', '2', '8', '7', '9', '2', '7', 'K', 'A', '4', '5', '10', '10', '6', '3']}
-2018-04-12 12:05:39,745 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_id': '5c200287ea93abd6d27c9b7e83085e3031b1d5d91deafe8b354c96c531e7c52d'}
-2018-04-12 12:05:39,749 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:05:39,756 - INFO - 200 GET /startgame (192.168.174.1) 42.01ms
-2018-04-12 12:05:41,346 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:06:19,950 - ERROR - Uncaught exception
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.6/site-packages/tornado/http1connection.py", line 237, in _read_message
-    delegate.finish()
-  File "/usr/local/lib/python3.6/site-packages/tornado/routing.py", line 256, in finish
-    self.delegate.finish()
-  File "/usr/local/lib/python3.6/site-packages/tornado/web.py", line 2139, in finish
-    self.execute()
-  File "/usr/local/lib/python3.6/site-packages/tornado/web.py", line 2172, in execute
-    **self.path_kwargs)
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 315, in wrapper
-    yielded = next(result)
-  File "/usr/local/lib/python3.6/site-packages/tornado/web.py", line 1541, in _execute
-    result = method(*self.path_args, **self.path_kwargs)
-  File "/usr/local/lib/python3.6/site-packages/tornado/gen.py", line 315, in wrapper
-    yielded = next(result)
-  File "/PycharmProjects/game/app.py", line 274, in get
-    return (yield self.getcard())
-  File "/PycharmProjects/game/decorators/check.py", line 64, in _wrapper
-    return function(self, *args, **kwargs)
-  File "/PycharmProjects/game/app.py", line 300, in getcard
-    player_cards=player_cards,
-  File "/PycharmProjects/game/app.py", line 300, in getcard
-    player_cards=player_cards,
-  File "/data/soft/pycharm-2016.3.2/helpers/pydev/_pydevd_bundle/pydevd_frame.py", line 651, in trace_dispatch
-    self.do_wait_suspend(thread, frame, event, arg)
-  File "/data/soft/pycharm-2016.3.2/helpers/pydev/_pydevd_bundle/pydevd_frame.py", line 71, in do_wait_suspend
-    self._args[0].do_wait_suspend(*args, **kwargs)
-  File "/data/soft/pycharm-2016.3.2/helpers/pydev/pydevd.py", line 748, in do_wait_suspend
-    time.sleep(0.01)
-KeyboardInterrupt
-2018-04-12 12:06:20,002 - INFO - Execute HGETALL Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44
-2018-04-12 12:06:20,007 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_cards': ['2', 'J', '3']}
-2018-04-12 12:06:20,008 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_cards_total_count': 15}
-2018-04-12 12:06:20,009 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'player_is_blackjack': False}
-2018-04-12 12:06:20,010 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'left_cards': ['8', '5', '4', '7', 'J', '9', 'J', 'K', 'Q', '5', '3', 'A', '3', '6', 'A', '7', 'A', '2', '10', '3', '6', 'Q', '10', 'Q', 'K', '8', '9', '5', 'Q', 'J', '4', '8', '4', '9', '2', '8', '7', '9', '2', '7', 'K', 'A', '4', '5', '10', '10', '6']}
-2018-04-12 12:06:20,011 - INFO - Execute HMSET Success, key: 34f02d0132bd67c0891ce482ae2a4954e31ada75be93f13f36d7e1ebd0453f44, mapping: {'step': 'GETCARD'}
-2018-04-12 12:06:20,013 - INFO - 200 GET /getcard (192.168.174.1) 13.70ms
-2018-04-12 13:39:01,662 - INFO - check_login wrapper: redirect to /login to login...
-2018-04-12 13:39:01,663 - INFO - 302 GET /getcard (192.168.174.1) 5.03ms
-2018-04-12 13:39:01,695 - INFO - 200 GET /login (192.168.174.1) 3.51ms
+2018-04-12 17:53:52,149 - DEBUG - Using selector: EpollSelector
+2018-04-12 17:54:04,333 - INFO - cookie_id or temp_id not in request_handler: <__main__.MainHandler object at 0x7f918de7f710>
+2018-04-12 17:54:04,338 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'cookie_id': 'a3b9f60e3aaf7058b7983b2e7b7779b5ba6bd828ea004169bd1a3f7a92c6555d', 'temp_id': '900835e72ce5010e9574182a4ada89549b3bf0db9e785938858dd915033b56bb', 'session_id': '4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1'}
+2018-04-12 17:54:04,340 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'cookie_id': 'a3b9f60e3aaf7058b7983b2e7b7779b5ba6bd828ea004169bd1a3f7a92c6555d', 'temp_id': '900835e72ce5010e9574182a4ada89549b3bf0db9e785938858dd915033b56bb', 'session_id': '4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1'}
+2018-04-12 17:54:04,341 - INFO - CurrentSession: {'cookie_id': 'a3b9f60e3aaf7058b7983b2e7b7779b5ba6bd828ea004169bd1a3f7a92c6555d', 'temp_id': '900835e72ce5010e9574182a4ada89549b3bf0db9e785938858dd915033b56bb', 'session_id': '4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1'}
+2018-04-12 17:54:04,341 - INFO - Init MainHandler success, Redirect to /login ...
+2018-04-12 17:54:04,344 - INFO - 200 GET / (192.168.174.1) 12.00ms
+2018-04-12 17:54:04,686 - WARNING - 404 GET /favicon.ico (192.168.174.1) 3.73ms
+2018-04-12 17:54:05,634 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:05,652 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:05,653 - INFO - check_login wrapper: redirect to /login to login...
+2018-04-12 17:54:05,656 - INFO - 302 GET /startgame (192.168.174.1) 24.03ms
+2018-04-12 17:54:06,152 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:06,164 - INFO - 200 GET /login (192.168.174.1) 14.08ms
+2018-04-12 17:54:10,476 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:10,486 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'cookie_id': 'a3b9f60e3aaf7058b7983b2e7b7779b5ba6bd828ea004169bd1a3f7a92c6555d', 'temp_id': '900835e72ce5010e9574182a4ada89549b3bf0db9e785938858dd915033b56bb', 'session_id': '4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1', 'user_name': 'd', 'user_password': 'd', 'user_id': 'd162fb62c2d395ebe3f260257d0ec4e9af2c45b20eefa3e0397caa025ee6e555'}
+2018-04-12 17:54:10,489 - INFO - 302 POST /login (192.168.174.1) 33.94ms
+2018-04-12 17:54:10,517 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:10,518 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:10,519 - INFO - BaseHandler: Generate desk_id: cb93dbcd2ea973e42904a83a0e6d4a0b18c02c497a3940ed09f3930e2d8daab2, left_cards info: ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9', '4', '4', 'J', '2', 'Q', '8', '5', '3']
+2018-04-12 17:54:10,519 - INFO - BaseHandler: Init dealer_cards: ['3', '5'], player_cards: ['8', 'Q'], left_cards: ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9', '4', '4', 'J', '2']
+2018-04-12 17:54:10,520 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'STARTGAME'}
+2018-04-12 17:54:10,521 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'desk_id': 'cb93dbcd2ea973e42904a83a0e6d4a0b18c02c497a3940ed09f3930e2d8daab2'}
+2018-04-12 17:54:10,521 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q']}
+2018-04-12 17:54:10,522 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 18}
+2018-04-12 17:54:10,524 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'NORMAL'}
+2018-04-12 17:54:10,527 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'dealer_id': '99f23e87d1748b4e6195f79facea227566580278cba0271d41d0d22a61531cdf'}
+2018-04-12 17:54:10,529 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'dealer_cards': ['3', '5']}
+2018-04-12 17:54:10,530 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'dealer_cards_total_count': 8}
+2018-04-12 17:54:10,533 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'dealer_cards_status': 'NORMAL'}
+2018-04-12 17:54:10,534 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9', '4', '4', 'J', '2']}
+2018-04-12 17:54:10,535 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_id': b'd162fb62c2d395ebe3f260257d0ec4e9af2c45b20eefa3e0397caa025ee6e555'}
+2018-04-12 17:54:10,541 - INFO - 200 GET /startgame (192.168.174.1) 24.28ms
+2018-04-12 17:54:12,583 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:12,585 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:12,589 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2']}
+2018-04-12 17:54:12,590 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 20}
+2018-04-12 17:54:12,590 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'NORMAL'}
+2018-04-12 17:54:12,591 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9', '4', '4', 'J']}
+2018-04-12 17:54:12,592 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:12,600 - INFO - 200 GET /getcard (192.168.174.1) 25.10ms
+2018-04-12 17:54:18,584 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:18,586 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:18,588 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J']}
+2018-04-12 17:54:18,589 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 30}
+2018-04-12 17:54:18,589 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:18,589 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9', '4', '4']}
+2018-04-12 17:54:18,590 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:18,591 - INFO - 200 GET /getcard (192.168.174.1) 8.90ms
+2018-04-12 17:54:21,876 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:21,876 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:21,878 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4']}
+2018-04-12 17:54:21,878 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 34}
+2018-04-12 17:54:21,879 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:21,880 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9', '4']}
+2018-04-12 17:54:21,881 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:21,884 - INFO - 200 GET /getcard (192.168.174.1) 11.21ms
+2018-04-12 17:54:23,031 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:23,033 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:23,039 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4']}
+2018-04-12 17:54:23,040 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 38}
+2018-04-12 17:54:23,042 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:23,043 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3', '9']}
+2018-04-12 17:54:23,044 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:23,046 - INFO - 200 GET /getcard (192.168.174.1) 17.53ms
+2018-04-12 17:54:23,749 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:23,757 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:23,760 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4', '9']}
+2018-04-12 17:54:23,761 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 47}
+2018-04-12 17:54:23,761 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:23,762 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A', '3']}
+2018-04-12 17:54:23,763 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:23,764 - INFO - 200 GET /getcard (192.168.174.1) 18.02ms
+2018-04-12 17:54:24,411 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:24,412 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:24,413 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4', '9', '3']}
+2018-04-12 17:54:24,414 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 50}
+2018-04-12 17:54:24,415 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:24,416 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7', 'A']}
+2018-04-12 17:54:24,419 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:24,420 - INFO - 200 GET /getcard (192.168.174.1) 10.82ms
+2018-04-12 17:54:25,137 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:25,138 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:25,140 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4', '9', '3', 'A']}
+2018-04-12 17:54:25,141 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 51}
+2018-04-12 17:54:25,141 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:25,142 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7', '7']}
+2018-04-12 17:54:25,142 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:25,195 - INFO - 200 GET /getcard (192.168.174.1) 60.18ms
+2018-04-12 17:54:25,579 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:25,579 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:25,581 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4', '9', '3', 'A', '7']}
+2018-04-12 17:54:25,581 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 58}
+2018-04-12 17:54:25,582 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:25,585 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9', '7']}
+2018-04-12 17:54:25,588 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:25,590 - INFO - 200 GET /getcard (192.168.174.1) 13.14ms
+2018-04-12 17:54:26,096 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:26,098 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:26,100 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4', '9', '3', 'A', '7', '7']}
+2018-04-12 17:54:26,103 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 65}
+2018-04-12 17:54:26,105 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:26,107 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J', '9']}
+2018-04-12 17:54:26,108 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:26,109 - INFO - 200 GET /getcard (192.168.174.1) 15.73ms
+2018-04-12 17:54:26,482 - INFO - Execute HGETALL Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1
+2018-04-12 17:54:26,483 - DEBUG - Execute HGET Faild, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, field: user_id
+2018-04-12 17:54:26,489 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards': ['8', 'Q', '2', 'J', '4', '4', '9', '3', 'A', '7', '7', '9']}
+2018-04-12 17:54:26,491 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_total_count': 74}
+2018-04-12 17:54:26,492 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'player_cards_status': 'BOOM'}
+2018-04-12 17:54:26,493 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'left_cards': ['10', '9', '6', '2', 'K', '6', 'J', '5', '3', '2', '3', '10', 'Q', '8', '8', '4', 'K', '7', '4', '6', 'Q', 'K', '5', 'Q', 'A', '5', 'A', '9', '6', 'J', '10', '2', '10', 'A', 'K', '7', '8', 'J']}
+2018-04-12 17:54:26,493 - INFO - Execute HMSET Success, key: 4c05eed05e830ec66d381388a47ed20aae73158ee5a1851a5b594a458b3f39b1, mapping: {'step': 'GETCARD'}
+2018-04-12 17:54:26,494 - INFO - 200 GET /getcard (192.168.174.1) 14.14ms

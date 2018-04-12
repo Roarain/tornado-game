@@ -39,13 +39,24 @@ class RedisPool(object):
         return RedisPool.redis_pool
 
     def setex(self, key, value):
+        """
+        from dict to redis string with timeout
+        :param key:
+        :param value:
+        :return: None
+        """
         try:
             self.redis_pool.setex(key, value, self.redis_timeout)
             logging.info('Execute SETEX Success, key: {0}, value: {1}'.format(key, value))
         except Exception as e:
-            logging.debug('Execute SETEX Faild, key: {0}, value: {1}. ErrorInfo: {2}'.format(key, value, e))
+            logging.debug('Execute SETEX Faild, key: {0}, value: {1}'.format(key, value))
 
     def get(self, key):
+        """
+        according to key to get string type's value
+        :param key:
+        :return:value
+        """
         try:
             result = self.redis_pool.get(key).decode()
             result = eval(result)
@@ -53,11 +64,17 @@ class RedisPool(object):
             logging.info('Execute GET Success, key: {0}'.format(key))
             return result
         except Exception as e:
-            logging.debug('Execute GET Faild, key: {0}. ErrorInfo: {1}'.format(key, e))
+            logging.debug('Execute GET Faild, key: {0}'.format(key))
             result = None
         return result
 
     def hmset(self, key, mapping):
+        """
+        hash type
+        :param key:
+        :param mapping:dict
+        :return: None
+        """
         try:
             self.redis_pool.hmset(key, mapping)
             self.redis_pool.expire(key, self.redis_timeout)
@@ -66,10 +83,14 @@ class RedisPool(object):
             logging.debug('Execute HMSET Faild, key: {0}, mapping: {1}'.format(key, mapping))
 
     def hgetall(self, key):
+        """
+        according to key to get hash type's value
+        :param key:
+        :return: mapping(dict)
+        """
         try:
             bresult = self.redis_pool.hgetall(key)
             result = {key.decode(): value.decode() for (key, value) in bresult.items()}
-            # result = eval(result)
             self.redis_pool.expire(key, self.redis_timeout)
             logging.info('Execute HGETALL Success, key: {0}'.format(key))
         except Exception as e:
@@ -78,20 +99,38 @@ class RedisPool(object):
         return result
 
     def exists(self, key):
+        """
+
+        :param key:
+        :return:True/False
+        4556
+        """
         return self.redis_pool.exists(key)
 
     def hget(self, key, field):
+        """
+        hash hget key, field
+        :param key:
+        :param field:
+        :return: key-->field-->value
+        """
         try:
             result = self.redis_pool.hget(key, field).decode()
             result = eval(result)
-            # result = self.redis_pool.hget(key, field)
-            # result = json.loads(self.redis_pool.hget(key, field))
         except Exception as e:
             logging.debug('Execute HGET Faild, key: {0}, field: {1}'.format(key, field))
             result = self.redis_pool.hget(key, field)
         return result
 
     def insert_user_name(self, user_name, user_password, user_gender=None, user_avatar=None):
+        """
+        check passed user info to redis
+        :param user_name:
+        :param user_password:
+        :param user_gender:
+        :param user_avatar:
+        :return:
+        """
         user_id = GenerateId().generate_user_id(user_name)
         user_dict = dict(
             user_name=user_name,
@@ -106,7 +145,6 @@ class RedisPool(object):
     def insert_session_id(self, user_name):
         user_id = self.hget(user_name, 'user_id')
 
-
     def insert_user_session_id(self, user_name):
         user_id = self.hget(user_name, 'user_id')
         user_session_id = GenerateId().generate_session_id2(user_name)
@@ -116,8 +154,6 @@ class RedisPool(object):
         )
         self.redis_pool.hmset(user_session_id, user_session_id_dict)
         self.redis_pool.expire(user_session_id, self.redis_timeout)
-
-
 
     def get_user_session_from_user_name(self, user_name):
         user_session_id = GenerateId().generate_session_id2(user_name)

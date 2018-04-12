@@ -23,17 +23,6 @@ logging.basicConfig(filename='generations.log', level=logging.DEBUG, format='%(a
 
 
 class GenerateId(object):
-    '''
-    def __init__(self):
-        self.user_secret = conf.user_secret
-        self.session_secret = conf.session_secret
-        self.session_secret2 = conf.session_secret2
-        self.desk_secret = conf.desk_secret
-        self.hmac_secret = conf.hmac_secret
-        self.cookie_secret = conf.cookie_secret
-        self.temp_secret = conf.temp_secret
-        self.table_secret = conf.table_secret
-    '''
 
     def generate_desk_id(self):
         desk_id = hashlib.sha256(('desk_name_' + conf.desk_secret + str(uuid.uuid4())).encode()).hexdigest()
